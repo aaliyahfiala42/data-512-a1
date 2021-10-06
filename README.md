@@ -17,7 +17,7 @@ Overlap between APIs in months and inconsitency in counting views
 Assumption that both APIs count mobile views the same
 
 ## Final Visualization
-<img src = '/wikipedia_traffic_200712-202108_visualization.png'>
+<img src = '/wikipedia_traffic_200712-202108_visualization.jpg'>
 
 ## Author
 Project Outline Credit: UW course Data Science 515 Human Centered Data Science taught by Dr. David W. McDonald.
