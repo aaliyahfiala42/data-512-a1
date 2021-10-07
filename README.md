@@ -9,35 +9,57 @@ The goal of this assignment is to construct, analyze, and publish a dataset of m
 In order to measure Wikipedia traffic from 2008-2021, data is collected from two different API endpoints, the Legacy Pagecounts API and the Pageviews API. For each API, data is collected for all months where data is available. The raw results are saved into 5 separate JSON source data files (one file per API query type).
 
 ### Wikipedia REST API
+
 Terms of use: https://www.mediawiki.org/wiki/Wikimedia_REST_API#Terms_and_conditions
 
 ### Pagecounts API
 The Legacy Pagecounts API provides access to desktop and mobile traffic data from December 2007 through July 2016.
+
 Documentation: https://wikitech.wikimedia.org/wiki/Analytics/AQS/Legacy_Pagecounts
+
 Endpoint: https://wikimedia.org/api/rest_v1/#/Pagecounts_data_(legacy)/get_metrics_legacy_pagecounts_aggregate_project_access_site_granularity_start_end
 
 ### Pageviews API
 The Pageviews API provides access to desktop, mobile web, and mobile app traffic data from July 2015 through last month.
+
 Pageviews API Documentation:https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
+
 Endpoint: https://wikimedia.org/api/rest_v1/#/Pageviews_data/get_metrics_pageviews_aggregate_project_access_agent_granularity_start_end
 
 ## Datasets
 There are 6 key data files stored for this project stored in the data folder. The first 5 are JSON files, where each JSON file is correlated with a single data call. The 5 JSON files are in the filename format: apiname_accesstype_firstmonth-lastmonth.json. 
+
 The JSON files are: 
+
 legacy_mobile-site_200801-201607.json (contains the following headers: Project, Access-Site, Granularity, Timestamp, Count)
+
 legacy_desktop-site_200801-201607.json (contains the following headers: Project, Access-Site, Granularity, Timestamp, Count)
+
 pageviews_mobile-app_201507-202108.json (contains the following headers: Project, Access-Site, Granularity, Timestamp, Views)
-pageviews_mobile-web_201507-202108.json (contains the following headers: Project, Access-Site, Granularity, Timestamp, Views)
+
 pageviews_mobile-web_201507-202108.json (contains the following headers: Project, Access-Site, Granularity, Timestamp, Views)
 
-The 6th file is titled en-wikipedia_traffic_200712-202108.csv and is an CSV file that contains all of the finalized, processed data from both API calls. This file contains the year, month, all (desktop + mobile) views, desktop views, and mobile views from both the pagecount and pageview APIs. The column headers and types in parentheis display as:
+pageviews_mobile-web_201507-202108.json (contains the following headers: Project, Access-Site, Granularity, Timestamp, Views)
+
+
+The 6th file is titled en-wikipedia_traffic_200712-202108.csv and is an CSV file that contains all of the finalized, processed data from both API calls. This file contains the year, month, all (desktop + mobile) views, desktop views, and mobile views from both the pagecount and pageview APIs. 
+
+The column headers and types in parentheis display as:
+
 year (YYYY)
+
 month (MM)
+
 pagecount_all_views (num_views)
+
 pagecount_desktop_views (num_views)
+
 pagecount_mobile_views (num_views)
+
 pageview_all_views (num_views)
+
 pageview_desktop_views (num_views)
+
 pageview_mobile_views (num_views)
 
 Steps for extracting each dataset are included in the hcds-a1-data-curation.ipynb Jupyter Notebook.
