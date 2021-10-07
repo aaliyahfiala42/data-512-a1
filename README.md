@@ -72,7 +72,13 @@ There are several assumptions that were made when merging together the counts us
 There are also several other known issues with the data communicated in the API documentation. See: https://wikitech.wikimedia.org/wiki/Analytics/Data_Lake/Traffic/Pageview_hourly#Changes_and_known_problems_since_2015-06-16
 
 ## Final Visualization: Monthly Wikipedia Traffic 2008-2021
-The final compelation
+
+The goal of the analysis performed below is to create a visulization that quickly summarizes the number of views that Wikipedia recieves every month for the following metrics: mobile traffic, desktop traffic, and all traffic (mobile + desktop).
+
+The final visulization plots the total number of Wikipedia views by month and contains data from the both the Legacy Pagecounts and Pagviews APIs. All views are shown in blue, desktop views are shown in green, and mobile views are shown in orange. The Legacy Pagecount API is displayed in a lighter shade, to distinguish data from the 2 APIs, to allow for easy comparison.
+
+Note that there is some overlap between data visualized for the two APIs during the period of July 2015 - July 2016. The number of views between these overlapping dates are not equal and vary quite a bit, especially when looking at desktop views. One way to possible account for this discrepancy is that the data from the Pageview API excludes spiders/crawlers, while data from the Pagecounts API does not.
+
 <img src = '/wikipedia_traffic_200712-202108_visualization.jpg'>
 
 
