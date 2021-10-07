@@ -1,7 +1,6 @@
 # Monthly Wikipedia Traffic
 ## A1: Data Curation Assignment 
 
-
 ## Project Overview
 The goal of this assignment is to construct, analyze, and publish a dataset of monthly traffic on English Wikipedia from January 1 2008 through August 30 2021. Data about Wikipedia page traffic is accessed from two Wikimedia REST API endpoints and merged into a single dataset, where simple data processing is performed on the data, and then analyzed and visualized.
 
@@ -71,7 +70,20 @@ There are several assumptions that were made when merging together the counts us
 
 There are also several other known issues with the data communicated in the API documentation. See: https://wikitech.wikimedia.org/wiki/Analytics/Data_Lake/Traffic/Pageview_hourly#Changes_and_known_problems_since_2015-06-16
 
-## Final Visualization: Monthly Wikipedia Traffic 2008-2021
+## Data Acquisition
+We begin the data acquisition process by requesting data from the Legacy Pagecoutns and Pageviews APIs. This is done by passing in the necessary parameters (outlined in the API documentation linked above), and calling each API. There are 5 API calls made, two for the Legacy Pagecounts (mobile and desktop) and three for the Pageviews (mobile app, mobile web, and desktop).
+
+The results of each API call are then stored in a variable and used to create a corresponding JSON file, with the following filename format:
+
+apiname_accesstype_firstmonth-lastmonth.json
+
+## Data Processing
+First we start by exporting each JSON file dataset and then formatting them to be stored as pandas dataframes. We convert the data into Python Dataframes using the Pandas library to allow for ease of processing and manipulation.
+
+Next we combine the mobile web and mobile app tables from the Pageviews API to get a combined mobile view count. After that we extract the Year and Month from the datetime variable that the APIs returned (i.e ditching the days and hours). Lastly, all of the dataframes are combined to create a single dataframe and exported into a csv document labeled en-wikipedia_traffic_200712-202108.csv.
+
+## Data Analysis
+### Monthly Wikipedia Traffic 2008-2021
 
 The goal of the analysis performed below is to create a visulization that quickly summarizes the number of views that Wikipedia recieves every month for the following metrics: mobile traffic, desktop traffic, and all traffic (mobile + desktop).
 
