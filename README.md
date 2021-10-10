@@ -99,7 +99,7 @@ Project Outline Credit: UW course Data Science 515 Human Centered Data Science t
 
 Solution Created by: Aaliyah Hänni
 
-## Sited Sources
+## Cited Sources
 
 https://towardsdatascience.com/how-to-parse-json-data-with-python-pandas-f84fbd0b1025 
 
